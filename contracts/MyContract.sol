@@ -1,48 +1,80 @@
 pragma solidity 0.4.24;
 
-import "../node_modules/chainlink/contracts/ChainlinkClient.sol";
+import "chainlink/contracts/ChainlinkClient.sol";
 
 contract MyContract is ChainlinkClient{
-    uint256 private oraclePaymentAmount;
-    bytes32 private jobId;
+  uint256 private oraclePaymentAmount;
+  bytes32 private jobId;
 
-    bool public resultReceived;
-    int256 public result;
+  struct SwapContract {
+    // Contract information
+    bool exists;
+    uint offeredEth;
+    string requestedBtc;
+    uint256 endAt;
 
-    constructor(
-        address _link,
-        address _oracle,
-        bytes32 _jobId,
-        uint256 _oraclePaymentAmount
-        )
-    public
-    {
-        setChainlinkToken(_link);
-        setChainlinkOracle(_oracle);
-        jobId = _jobId;
-        oraclePaymentAmount = _oraclePaymentAmount;
-    }
+    // Ethereum giver information
+    address eEthAddress;
+    string eBtcAddress;
 
-    function makeRequest() external returns (bytes32 requestId)
-    {
-        Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfill.selector);
-        req.add("low", "1");
-        req.add("high", "6");
-        req.add("copyPath", "random_number");
-        requestId = sendChainlinkRequestTo(chainlinkOracleAddress(), req, oraclePaymentAmount);
-    }
+    // Bitcoin giver information
+    address bEthAddress;
+  }
 
-    function resetResult() external
-    {
-        resultReceived = false;
-        result = 0;
-    }
+  mapping (string => SwapContract) swapContracts;
 
-    function fulfill(bytes32 _requestId, int256 _result)
-    public
-    recordChainlinkFulfillment(_requestId)
-    {
-        resultReceived = true;
-        result = _result;
-    }
+  // Accessor to a single user
+  function getSwapContract(string eBtcAddress) public view returns(bool, uint256, string, uint256, address, string, address) {
+    SwapContract storage sc = swapContracts[eBtcAddress];
+    return (
+      sc.exists,
+      sc.offeredEth,
+      sc.requestedBtc,
+      sc.endAt,
+      sc.eEthAddress,
+      sc.eBtcAddress,
+      sc.bEthAddress
+    );
+  }
+
+  // Instantiate a swap contract
+  function createSwapContract(
+    uint offeredEth,
+    string requestedBtc,
+    address eEthAddress,
+    string eBtcAddress
+  ) private {
+    swapContracts[eBtcAddress].exists = true;
+    swapContracts[eBtcAddress].offeredEth = offeredEth;
+    swapContracts[eBtcAddress].requestedBtc = requestedBtc;
+    swapContracts[eBtcAddress].eEthAddress = eEthAddress;
+    swapContracts[eBtcAddress].eBtcAddress = eBtcAddress;
+  }
+
+  constructor(
+    address _link,
+    address _oracle,
+    bytes32 _jobId,
+    uint256 _oraclePaymentAmount
+  ) public {
+      setChainlinkToken(_link);
+      setChainlinkOracle(_oracle);
+      jobId = _jobId;
+      oraclePaymentAmount = _oraclePaymentAmount;
+  }
+
+  function initiateSwapContract(
+      string _eBtcAddress,
+      string _requestedBtc
+  ) public payable {
+    require(swapContracts[_eBtcAddress].exists == false);
+    require(msg.value > 0);
+
+    createSwapContract(
+      msg.value,
+      _requestedBtc,
+      msg.sender,
+      _eBtcAddress
+    );
+  }
 }
