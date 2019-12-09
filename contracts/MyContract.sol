@@ -20,13 +20,37 @@ contract MyContract is ChainlinkClient{
 
     // Bitcoin giver information
     address bEthAddress;
-    uint256 bEthCollateral;
+
+    // Fullfillment
+    string transactionHash;
+    bytes32 nbConfirmations;
+    bytes32 voutAddress;
+    bytes32 voutValue;
   }
 
+  // Mapping of requestId => eBtcAddress
+  mapping (bytes32 => string) eBtcAddressForRequestId;
+
+  // Mapping of eBtcAddress => swapContract
   mapping (string => SwapContract) swapContracts;
 
+
   // Accessor to a single user
-  function getSwapContract(string eBtcAddress) public view returns(bool, uint256, string, uint256, uint256, address, string, address, uint256) {
+  function getSwapContract(
+    string eBtcAddress
+  ) public view returns(
+    bool,
+    uint256,
+    string,
+    uint256,
+    uint256,
+    address,
+    string,
+    address,
+    string,
+    bytes32,
+    bytes32,
+    bytes32) {
     SwapContract storage sc = swapContracts[eBtcAddress];
     return (
       sc.exists,
@@ -37,7 +61,10 @@ contract MyContract is ChainlinkClient{
       sc.eEthAddress,
       sc.eBtcAddress,
       sc.bEthAddress,
-      sc.bEthCollateral
+      sc.transactionHash,
+      sc.nbConfirmations,
+      sc.voutAddress,
+      sc.voutValue
     );
   }
 
@@ -63,10 +90,10 @@ contract MyContract is ChainlinkClient{
     bytes32 _jobId,
     uint256 _oraclePaymentAmount
   ) public {
-      setChainlinkToken(_link);
-      setChainlinkOracle(_oracle);
-      jobId = _jobId;
-      oraclePaymentAmount = _oraclePaymentAmount;
+    setChainlinkToken(_link);
+    setChainlinkOracle(_oracle);
+    jobId = _jobId;
+    oraclePaymentAmount = _oraclePaymentAmount;
   }
 
   function initiateSwapContract(
@@ -88,15 +115,88 @@ contract MyContract is ChainlinkClient{
 
   function acceptSwapContract(
     string _eBtcAddress
-  ) public payable {
-    // ID exists
+  ) external payable {
+    // id exists; hasn't been registered to before; has the correct amount of collateral
     require(swapContracts[_eBtcAddress].exists == true);
-    // Hasn't been registered to before
     require(swapContracts[_eBtcAddress].bEthAddress == 0);
-    // Has the correct amount of collateral
     require(swapContracts[_eBtcAddress].requestedEthCollateral == msg.value);
 
     swapContracts[_eBtcAddress].bEthAddress = msg.sender;
     swapContracts[_eBtcAddress].endsAt = block.timestamp.add(4 hours);
+  }
+
+  /* function satisfySwapContract( */
+    /* string _eBtcAddress, */
+    /* string _transactionHash */
+  /* ) external { */
+    // id exists; has been registered to; before the endsAt
+
+    /* require(swapContracts[_eBtcAddress].exists == true); */
+    /* require(swapContracts[_eBtcAddress].bEthAddress != address(0)); */
+    /* require(swapContracts[_eBtcAddress].endsAt > block.timestamp); */
+
+    /* swapContracts[_eBtcAddress].transactionHash = _transactionHash; */
+
+    /* requestNbConfirmations(_eBtcAddress); */
+  /* } */
+
+  function requestNbConfirmations(
+    string _eBtcAddress,
+    string _transactionHash
+  ) external returns (bytes32 requestId) {
+    require(swapContracts[_eBtcAddress].exists == true);
+    require(swapContracts[_eBtcAddress].bEthAddress != address(0));
+
+    swapContracts[_eBtcAddress].transactionHash = _transactionHash;
+
+    Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillNbConfirmations.selector);
+    req.add("hash", _transactionHash);
+    req.add("encode", "true");
+    req.add("copyPath", "confirmations");
+    requestId = sendChainlinkRequestTo(chainlinkOracleAddress(), req, oraclePaymentAmount);
+    eBtcAddressForRequestId[requestId] = _eBtcAddress;
+  }
+
+  function fulfillNbConfirmations(
+    bytes32 _requestId, bytes32 _result
+  ) public recordChainlinkFulfillment(_requestId) {
+    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    swapContracts[eBtcAddress].nbConfirmations = _result;
+  }
+
+  function requestVoutAddress(
+    string _eBtcAddress
+  ) external returns (bytes32 requestId) {
+    Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillVoutAddress.selector);
+    req.add("hash", swapContracts[_eBtcAddress].transactionHash);
+    req.add("encode", "true");
+    req.add("copyPath", "vout.0.scriptPubKey.addresses.0");
+    requestId = sendChainlinkRequestTo(chainlinkOracleAddress(), req, oraclePaymentAmount);
+    eBtcAddressForRequestId[requestId] = _eBtcAddress;
+  }
+
+  function fulfillVoutAddress(
+    bytes32 _requestId, bytes32 _result
+  ) public recordChainlinkFulfillment(_requestId) {
+    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    swapContracts[eBtcAddress].voutAddress = _result;
+  }
+
+  function requestVoutValue(
+    string _eBtcAddress
+  ) external returns (bytes32 requestId) {
+    Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillVoutValue.selector);
+    req.add("hash", swapContracts[_eBtcAddress].transactionHash);
+    req.add("encode", "true");
+    req.add("copyPath", "vout.0.value");
+    requestId = sendChainlinkRequestTo(chainlinkOracleAddress(), req, oraclePaymentAmount);
+    eBtcAddressForRequestId[requestId] = _eBtcAddress;
+  }
+
+  function fulfillVoutValue(
+    bytes32 _requestId, bytes32 _result
+  ) public recordChainlinkFulfillment(_requestId) {
+    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    swapContracts[eBtcAddress].voutValue = _result;
   }
 }

@@ -10,10 +10,10 @@ module.exports = async callback => {
     const tx = await mc.initiateSwapContract(
       "mYbTcAdDrEsS",
       "12.34567890",
-      web3.utils.toHex("100000000000000000"),
+      web3.utils.toHex("10000000000000000"),
       {
         from: accounts[1],
-        value: 100000000000000000,
+        value: 10000000000000000,
       },
     )
     callback(tx.tx)

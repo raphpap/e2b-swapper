@@ -7,12 +7,9 @@ module.exports = async callback => {
 
     const accounts = await web3.eth.getAccounts()
 
-    const tx = await mc.acceptSwapContract(
+    const tx = await mc.satisfySwapContract(
       "mYbTcAdDrEsS",
-      {
-        from: accounts[2],
-        value: 10000000000000000,
-      }
+      "a7e5415a255c2bcbc15f837d5664b6a6f21fff12174deccc57d21ab42d8ba262"
     )
 
     callback(tx.tx)
