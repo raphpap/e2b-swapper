@@ -7,12 +7,10 @@ module.exports = async callback => {
 
     const accounts = await web3.eth.getAccounts()
 
-    const tx = await mc.initiateSwapContract(
+    const tx = await mc.acceptSwapContract(
       "mYbTcAdDrEsS",
-      "12.34567890",
-      web3.utils.toHex("100000000000000000"),
       {
-        from: accounts[1],
+        from: accounts[2],
         value: 100000000000000000,
       },
     )
