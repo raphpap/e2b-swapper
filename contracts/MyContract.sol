@@ -125,32 +125,27 @@ contract MyContract is ChainlinkClient{
     swapContracts[_eBtcAddress].endsAt = block.timestamp.add(4 hours);
   }
 
-  /* function satisfySwapContract( */
-    /* string _eBtcAddress, */
-    /* string _transactionHash */
-  /* ) external { */
-    // id exists; has been registered to; before the endsAt
-
-    /* require(swapContracts[_eBtcAddress].exists == true); */
-    /* require(swapContracts[_eBtcAddress].bEthAddress != address(0)); */
-    /* require(swapContracts[_eBtcAddress].endsAt > block.timestamp); */
-
-    /* swapContracts[_eBtcAddress].transactionHash = _transactionHash; */
-
-    /* requestNbConfirmations(_eBtcAddress); */
-  /* } */
-
-  function requestNbConfirmations(
+  function satisfySwapContract(
     string _eBtcAddress,
     string _transactionHash
-  ) external returns (bytes32 requestId) {
+  ) external {
+    // id exists; has been registered to; before the endsAt
     require(swapContracts[_eBtcAddress].exists == true);
     require(swapContracts[_eBtcAddress].bEthAddress != address(0));
+    /* require(swapContracts[_eBtcAddress].endsAt > block.timestamp); */
 
     swapContracts[_eBtcAddress].transactionHash = _transactionHash;
 
+    bytes32 requestIdA = requestNbConfirmations(_eBtcAddress);
+    bytes32 requestIdB = requestVoutAddress(_eBtcAddress);
+    bytes32 requestIdC = requestVoutValue(_eBtcAddress);
+  }
+
+  function requestNbConfirmations(
+    string _eBtcAddress
+  ) private returns (bytes32 requestId) {
     Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillNbConfirmations.selector);
-    req.add("hash", _transactionHash);
+    req.add("hash", swapContracts[_eBtcAddress].transactionHash);
     req.add("encode", "true");
     req.add("copyPath", "confirmations");
     requestId = sendChainlinkRequestTo(chainlinkOracleAddress(), req, oraclePaymentAmount);
@@ -160,13 +155,13 @@ contract MyContract is ChainlinkClient{
   function fulfillNbConfirmations(
     bytes32 _requestId, bytes32 _result
   ) public recordChainlinkFulfillment(_requestId) {
-    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].nbConfirmations = _result;
   }
 
   function requestVoutAddress(
     string _eBtcAddress
-  ) external returns (bytes32 requestId) {
+  ) private returns (bytes32 requestId) {
     Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillVoutAddress.selector);
     req.add("hash", swapContracts[_eBtcAddress].transactionHash);
     req.add("encode", "true");
@@ -178,13 +173,13 @@ contract MyContract is ChainlinkClient{
   function fulfillVoutAddress(
     bytes32 _requestId, bytes32 _result
   ) public recordChainlinkFulfillment(_requestId) {
-    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].voutAddress = _result;
   }
 
   function requestVoutValue(
     string _eBtcAddress
-  ) external returns (bytes32 requestId) {
+  ) private returns (bytes32 requestId) {
     Chainlink.Request memory req = buildChainlinkRequest(jobId, this, this.fulfillVoutValue.selector);
     req.add("hash", swapContracts[_eBtcAddress].transactionHash);
     req.add("encode", "true");
@@ -196,7 +191,7 @@ contract MyContract is ChainlinkClient{
   function fulfillVoutValue(
     bytes32 _requestId, bytes32 _result
   ) public recordChainlinkFulfillment(_requestId) {
-    string eBtcAddress = eBtcAddressForRequestId[_requestId];
+    string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].voutValue = _result;
   }
 }
