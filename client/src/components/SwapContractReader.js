@@ -121,7 +121,7 @@ export default function SwapContractReader(props) {
 
           <Grid container item xs={12}>
             <Typography variant="subtitle1" color="inherit" className={classes.subtitle}>
-              ETH User Information
+              ETH Trader Information
             </Typography>
           </Grid>
 
@@ -137,7 +137,7 @@ export default function SwapContractReader(props) {
 
           <Grid container item xs={12}>
             <Typography variant="subtitle1" color="inherit" className={classes.subtitle}>
-              BTC User Information
+              BTC Trader Information
             </Typography>
           </Grid>
 

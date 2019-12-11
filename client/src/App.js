@@ -18,7 +18,7 @@ import CreateForm from "./components/CreateForm";
 import CancelForm from "./components/CancelForm";
 import AcceptForm from "./components/AcceptForm";
 import FullfillForm from "./components/FullfillForm";
-import PlaceholderMessage from "./components/PlaceholderMessage";
+import Home from "./components/Home";
 import "./App.css";
 
 const GAS = 1000000;
@@ -206,61 +206,64 @@ class App extends Component {
           <Router>
             <Header />
 
-            <Grid container direction="row">
-              <Grid container item xs={12} md={4}>
-                <SwapContractReader
-                  onChange={(value) => this.handleUpdateEBtcAddress(value)}
-                  {...this.state}
-                />
-              </Grid>
+            <Switch>
+              <Route path="/contract">
+                <Grid container direction="row">
+                  <Grid container item xs={12} md={4}>
+                    <SwapContractReader
+                      onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                      {...this.state}
+                    />
+                  </Grid>
 
-              <Grid item xs={12} md={8}>
-                  <UserActionList />
+                  <Grid item xs={12} md={8}>
+                      <UserActionList />
 
-                  <Switch>
-                    <Route path="/create">
-                      <CreateForm
-                        onChange={(value) => this.handleUpdateEBtcAddress(value)}
-                        handleCreateContract={this.handleCreateContract}
-                        exists={this.state.exists}
-                        eBtcAddress={this.state.eBtcAddress}
-                      />
-                    </Route>
-                    <Route path="/cancel">
-                      <CancelForm
-                        onChange={(value) => this.handleUpdateEBtcAddress(value)}
-                        handleCancelContract={this.handleCancelContract}
-                        exists={this.state.exists}
-                        eBtcAddress={this.state.eBtcAddress}
-                      />
-                    </Route>
-                    <Route path="/accept">
-                      <AcceptForm
-                        onChange={(value) => this.handleUpdateEBtcAddress(value)}
-                        handleAcceptContract={this.handleAcceptContract}
-                        exists={this.state.exists}
-                        eBtcAddress={this.state.eBtcAddress}
-                        requestedEthCollateral={this.state.requestedEthCollateral}
-                        web3={this.state.web3}
-                      />
-                    </Route>
-                    <Route path="/fullfill">
-                      <FullfillForm
-                        onChange={(value) => this.handleUpdateEBtcAddress(value)}
-                        handleFullfillContract={this.handleFullfillContract}
-                        exists={this.state.exists}
-                        eBtcAddress={this.state.eBtcAddress}
-                        bEthAddress={this.state.bEthAddress}
-                      />
-                    </Route>
-                    <Route path="/">
-                      <PlaceholderMessage
-                        eBtcAddress={this.state.eBtcAddress}
-                      />
-                    </Route>
-                  </Switch>
-              </Grid>
-            </Grid>
+                      <Switch>
+                        <Route path="/contract/create">
+                          <CreateForm
+                            onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                            handleCreateContract={this.handleCreateContract}
+                            exists={this.state.exists}
+                            eBtcAddress={this.state.eBtcAddress}
+                          />
+                        </Route>
+                        <Route path="/contract/cancel">
+                          <CancelForm
+                            onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                            handleCancelContract={this.handleCancelContract}
+                            exists={this.state.exists}
+                            eBtcAddress={this.state.eBtcAddress}
+                          />
+                        </Route>
+                        <Route path="/contract/accept">
+                          <AcceptForm
+                            onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                            handleAcceptContract={this.handleAcceptContract}
+                            exists={this.state.exists}
+                            eBtcAddress={this.state.eBtcAddress}
+                            requestedEthCollateral={this.state.requestedEthCollateral}
+                            web3={this.state.web3}
+                          />
+                        </Route>
+                        <Route path="/contract/fullfill">
+                          <FullfillForm
+                            onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                            handleFullfillContract={this.handleFullfillContract}
+                            exists={this.state.exists}
+                            eBtcAddress={this.state.eBtcAddress}
+                            bEthAddress={this.state.bEthAddress}
+                          />
+                        </Route>
+                      </Switch>
+                  </Grid>
+                </Grid>
+              </Route>
+
+              <Route default>
+                <Home />
+              </Route>
+            </Switch>
           </Router>
         </div>
       </ThemeProvider>

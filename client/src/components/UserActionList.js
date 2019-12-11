@@ -75,19 +75,19 @@ export default function UserActionList() {
         <Grid item xs={6}>
           <Paper className={classes.ethPaper}>
             <Typography variant="h6" className={classes.ethHeader}>
-              Sell your ETH
+              Trade your ETH
             </Typography>
 
             <ul className={classes.menu}>
               <li>
-                <NavLink to="/create" className={classes.ethItem} activeClassName={'active'}>
+                <NavLink to="/contract/create" className={classes.ethItem} activeClassName={'active'}>
                   <Button className={classes.ethButton}>
                     Create contract
                   </Button>
                 </NavLink>
               </li>
               <li >
-                <NavLink to="/cancel" className={classes.ethItem} activeClassName={'active'}>
+                <NavLink to="/contract/cancel" className={classes.ethItem} activeClassName={'active'}>
                   <Button className={classes.ethButton}>
                     Cancel contract
                   </Button>
@@ -104,14 +104,14 @@ export default function UserActionList() {
 
             <ul className={classes.menu}>
               <li>
-                <NavLink to="/accept" className={classes.btcItem} activeClassName={'active'}>
+                <NavLink to="/contract/accept" className={classes.btcItem} activeClassName={'active'}>
                   <Button color="secondary" className={classes.btcButton}>
                     Accept contract
                   </Button>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/fullfill" className={classes.btcItem} activeClassName={classes.active}>
+                <NavLink to="/contract/fullfill" className={classes.btcItem} activeClassName={classes.active}>
                   <Button color="secondary" className={classes.btcButton}>
                     Fullfill contract
                   </Button>
