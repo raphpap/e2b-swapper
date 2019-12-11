@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
   row: {
     borderBottom: '1px solid rgba(0, 0, 0, 0.2)',
-    padding: '4px'
+    padding: '6px'
   },
   title: {
     fontSize: '14px',

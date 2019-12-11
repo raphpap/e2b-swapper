@@ -13,7 +13,19 @@ const useStyles = makeStyles({
   },
   link: {
     textDecoration: 'none',
-    color: '#fff'
+    color: '#fff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  name: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  logo: {
+    width: '32px',
+    haight: '32px',
+    margin: '3px'
   },
   bar: {
     background: `${blue[900]}`
@@ -29,14 +41,14 @@ export default function Header() {
         <Toolbar>
           <Grid item xs>
           <Link to="/" className={classes.link}>
-            <Typography variant="h6" color="inherit">
-              E2B Swapper
+            <Typography variant="h6" color="inherit" className={classes.name}>
+              Link<img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" className={classes.logo} />wap
             </Typography>
             </Link>
           </Grid>
           <Grid item xs>
             <Typography variant="body2" color="inherit">
-              Trustlessly swap ethereum and bitcoin
+              Trustlessly trade ethereum for bitcoin
             </Typography>
           </Grid>
         </Toolbar>

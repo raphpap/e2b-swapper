@@ -1,5 +1,5 @@
 {
-  "name": "E2B-Swapper",
+  "name": "link-swap",
   "author": "raphpap",
   "version": "1.0.0",
   "description": "First step towards a truly trustless Eth to Btc swap.",
@@ -20,7 +20,8 @@
     "script-5": "npx truffle exec scripts/5-satisfy-swap-contract.js --network live",
     "script-5.1": "npx truffle exec scripts/5.1-request-nb-confirmations.js --network live",
     "script-5.2": "npx truffle exec scripts/5.2-request-vout-address.js --network live",
-    "script-5.3": "npx truffle exec scripts/5.3-request-vout-value.js --network live"
+    "script-5.3": "npx truffle exec scripts/5.3-request-vout-value.js --network live",
+    "script-6": "npx truffle exec scripts/6-cancel-swap-contract.js --network live"
   },
   "license": "MIT",
   "dependencies": {

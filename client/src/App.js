@@ -35,7 +35,7 @@ class App extends Component {
     requestedEthCollateral: null,
     endsAt: null,
     eEthAddress: null,
-    eBtcAddress: 'mYbTcAdDrEsSee',
+    eBtcAddress: '',
     bEthAddress: null,
     transactionHash: null,
     nbConfirmations: null,
