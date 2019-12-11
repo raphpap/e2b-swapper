@@ -1,4 +1,4 @@
-# LinkSwap
+![LinkSwap](https://github.com/raphpap/link-swap/images/linkswap.png)
 
 ## Description
 LinkSwap is the first step towards a truly trustless way to trade Ethereum with Bitcoin.
