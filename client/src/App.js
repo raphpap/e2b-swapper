@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import { Button, Typography, Grid, TextField } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 
 import MyContract from "./contracts/MyContract.json";
@@ -22,18 +21,14 @@ import FullfillForm from "./components/FullfillForm";
 import PlaceholderMessage from "./components/PlaceholderMessage";
 import "./App.css";
 
-const GAS = 500000;
-const GAS_PRICE = "20000000000";
+const GAS = 1000000;
+const GAS_PRICE = "40000000000";
 
 class App extends Component {
   state = {
     web3: null,
     accounts: null,
     contract: null,
-    randomLow: 1,
-    randomHigh: 6,
-    resultReceived: false,
-    result: "0",
     exists: false,
     offeredEth: null,
     requestedBtc: null,
@@ -45,7 +40,8 @@ class App extends Component {
     transactionHash: null,
     nbConfirmations: null,
     voutAddress: null,
-    voutValue: null
+    voutValue: null,
+    fullfilled: false
   };
 
   componentDidMount = async () => {
@@ -99,11 +95,12 @@ class App extends Component {
         requestedEthCollateral: swapContractInfo[3].toString(),
         endsAt: swapContractInfo[4].toString(),
         eEthAddress: swapContractInfo[5].toString(),
-        bEthAddress: swapContractInfo[7].toString(),
-        transactionHash: swapContractInfo[8].toString(),
-        nbConfirmations: this.state.web3.utils.hexToAscii(swapContractInfo[9].toString()),
-        voutAddress: this.state.web3.utils.hexToAscii(swapContractInfo[10].toString()),
-        voutValue: this.state.web3.utils.hexToAscii(swapContractInfo[11].toString()),
+        bEthAddress: swapContractInfo[6].toString(),
+        transactionHash: swapContractInfo[7].toString(),
+        nbConfirmations: this.state.web3.utils.hexToAscii(swapContractInfo[8].toString()),
+        voutAddress: this.state.web3.utils.hexToAscii(swapContractInfo[9].toString()),
+        voutValue: this.state.web3.utils.hexToAscii(swapContractInfo[10].toString()),
+        fullfilled: swapContractInfo[11],
       });
     } else {
       this.setState({
@@ -118,6 +115,7 @@ class App extends Component {
         nbConfirmations: null,
         voutAddress: null,
         voutValue: null,
+        fullfilled: false
       });
     }
   };
@@ -125,18 +123,6 @@ class App extends Component {
   handleUpdateEBtcAddress = (value) => {
     this.setState({ eBtcAddress: value });
   };
-
-  // handleRequestResult = async () => {
-  //   await this.state.contract.methods
-  //     .makeRequest(this.state.randomLow.toString(), this.state.randomHigh.toString())
-  //     .send({ from: this.state.accounts[0], gas: GAS, gasPrice: GAS_PRICE });
-  // };
-  //
-  // handleResetResult = async () => {
-  //   await this.state.contract.methods
-  //     .resetResult()
-  //     .send({ from: this.state.accounts[0], gas: GAS, gasPrice: GAS_PRICE });
-  // };
 
   handleCreateContract = async ({offeredEth, requestedBtc, requestedEthCollateral}) => {
     const {web3, contract, accounts, eBtcAddress} = this.state;
@@ -155,8 +141,22 @@ class App extends Component {
       });
   }
 
+  handleCancelContract = async () => {
+    const {contract, accounts, eBtcAddress} = this.state;
+
+    await contract.methods
+      .cancelSwapContract(
+        eBtcAddress.toString(),
+      )
+      .send({
+        from: accounts[0],
+        gas: GAS,
+        gasPrice: GAS_PRICE
+      });
+  }
+
   handleAcceptContract = async () => {
-    const {web3, contract, accounts, eBtcAddress, requestedEthCollateral} = this.state;
+    const {contract, accounts, eBtcAddress, requestedEthCollateral} = this.state;
 
     await contract.methods
       .acceptSwapContract(
@@ -214,7 +214,7 @@ class App extends Component {
                 />
               </Grid>
 
-              <Grid container item xs={12} md={8}>
+              <Grid item xs={12} md={8}>
                   <UserActionList />
 
                   <Switch>
@@ -227,7 +227,12 @@ class App extends Component {
                       />
                     </Route>
                     <Route path="/cancel">
-                      <CancelForm />
+                      <CancelForm
+                        onChange={(value) => this.handleUpdateEBtcAddress(value)}
+                        handleCancelContract={this.handleCancelContract}
+                        exists={this.state.exists}
+                        eBtcAddress={this.state.eBtcAddress}
+                      />
                     </Route>
                     <Route path="/accept">
                       <AcceptForm

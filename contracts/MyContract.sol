@@ -16,7 +16,6 @@ contract MyContract is ChainlinkClient{
 
     // Ethereum giver information
     address eEthAddress;
-    string eBtcAddress;
 
     // Bitcoin giver information
     address bEthAddress;
@@ -26,6 +25,9 @@ contract MyContract is ChainlinkClient{
     bytes32 nbConfirmations;
     bytes32 voutAddress;
     bytes32 voutValue;
+
+    // Result
+    bool fullfilled;
   }
 
   // Mapping of requestId => eBtcAddress
@@ -45,12 +47,13 @@ contract MyContract is ChainlinkClient{
     uint256,
     uint256,
     address,
-    string,
     address,
     string,
     bytes32,
     bytes32,
-    bytes32) {
+    bytes32,
+    bool
+  ) {
     SwapContract storage sc = swapContracts[eBtcAddress];
     return (
       sc.exists,
@@ -59,12 +62,12 @@ contract MyContract is ChainlinkClient{
       sc.requestedEthCollateral,
       sc.endsAt,
       sc.eEthAddress,
-      sc.eBtcAddress,
       sc.bEthAddress,
       sc.transactionHash,
       sc.nbConfirmations,
       sc.voutAddress,
-      sc.voutValue
+      sc.voutValue,
+      sc.fullfilled
     );
   }
 
@@ -81,7 +84,7 @@ contract MyContract is ChainlinkClient{
     swapContracts[_eBtcAddress].requestedBtc = _requestedBtc;
     swapContracts[_eBtcAddress].requestedEthCollateral = _requestedEthCollateral;
     swapContracts[_eBtcAddress].eEthAddress = _eEthAddress;
-    swapContracts[_eBtcAddress].eBtcAddress = _eBtcAddress;
+    swapContracts[_eBtcAddress].fullfilled = false;
   }
 
   constructor(
@@ -102,6 +105,7 @@ contract MyContract is ChainlinkClient{
       uint256 _requestedEthCollateral
   ) public payable {
     require(swapContracts[_eBtcAddress].exists == false);
+    require(swapContracts[_eBtcAddress].eEthAddress == 0);
     require(msg.value > 0);
 
     createSwapContract(
@@ -113,6 +117,24 @@ contract MyContract is ChainlinkClient{
     );
   }
 
+  function cancelSwapContract(
+    string _eBtcAddress
+  ) public payable {
+    require(swapContracts[_eBtcAddress].exists == true);
+    require(swapContracts[_eBtcAddress].fullfilled == false);
+    require(swapContracts[_eBtcAddress].eEthAddress == msg.sender);
+
+    // If never got accepted, can withdraw own balance
+    if (swapContracts[_eBtcAddress].bEthAddress == 0) {
+      swapContracts[_eBtcAddress].eEthAddress.transfer(swapContracts[_eBtcAddress].offeredEth);
+      swapContracts[_eBtcAddress].exists = false;
+    // If accepted but endsAt is passed, can withdraw own balance and collateral
+    } else if (block.timestamp > swapContracts[_eBtcAddress].endsAt) {
+      swapContracts[_eBtcAddress].eEthAddress.transfer(swapContracts[_eBtcAddress].offeredEth + swapContracts[_eBtcAddress].requestedEthCollateral);
+      swapContracts[_eBtcAddress].exists = false;
+    }
+  }
+
   function acceptSwapContract(
     string _eBtcAddress
   ) external payable {
@@ -122,6 +144,7 @@ contract MyContract is ChainlinkClient{
     require(swapContracts[_eBtcAddress].requestedEthCollateral == msg.value);
 
     swapContracts[_eBtcAddress].bEthAddress = msg.sender;
+    // After that time, contract creator is allowed to withdraw
     swapContracts[_eBtcAddress].endsAt = block.timestamp.add(4 hours);
   }
 
@@ -132,7 +155,7 @@ contract MyContract is ChainlinkClient{
     // id exists; has been registered to; before the endsAt
     require(swapContracts[_eBtcAddress].exists == true);
     require(swapContracts[_eBtcAddress].bEthAddress != address(0));
-    /* require(swapContracts[_eBtcAddress].endsAt > block.timestamp); */
+    require(swapContracts[_eBtcAddress].fullfilled == false);
 
     swapContracts[_eBtcAddress].transactionHash = _transactionHash;
 
@@ -157,6 +180,10 @@ contract MyContract is ChainlinkClient{
   ) public recordChainlinkFulfillment(_requestId) {
     string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].nbConfirmations = _result;
+
+    if (swapContracts[eBtcAddress].nbConfirmations != 0 && swapContracts[eBtcAddress].voutAddress != 0 && swapContracts[eBtcAddress].voutValue != 0) {
+      tryToCompleteContract(eBtcAddress);
+    }
   }
 
   function requestVoutAddress(
@@ -175,6 +202,10 @@ contract MyContract is ChainlinkClient{
   ) public recordChainlinkFulfillment(_requestId) {
     string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].voutAddress = _result;
+
+    if (swapContracts[eBtcAddress].nbConfirmations != 0 && swapContracts[eBtcAddress].voutAddress != 0 && swapContracts[eBtcAddress].voutValue != 0) {
+      tryToCompleteContract(eBtcAddress);
+    }
   }
 
   function requestVoutValue(
@@ -193,5 +224,38 @@ contract MyContract is ChainlinkClient{
   ) public recordChainlinkFulfillment(_requestId) {
     string storage eBtcAddress = eBtcAddressForRequestId[_requestId];
     swapContracts[eBtcAddress].voutValue = _result;
+
+    if (swapContracts[eBtcAddress].nbConfirmations != 0 && swapContracts[eBtcAddress].voutAddress != 0 && swapContracts[eBtcAddress].voutValue != 0) {
+      tryToCompleteContract(eBtcAddress);
+    }
+  }
+
+  function tryToCompleteContract(
+    string _eBtcAddress
+  ) private {
+    if (
+      uint256(swapContracts[_eBtcAddress].nbConfirmations) >= 6 &&
+      stringToBytes32(_eBtcAddress) == swapContracts[_eBtcAddress].voutAddress &&
+      stringToBytes32(swapContracts[_eBtcAddress].requestedBtc) == swapContracts[_eBtcAddress].voutValue &&
+      swapContracts[_eBtcAddress].exists == true &&
+      swapContracts[_eBtcAddress].fullfilled == false
+    ) {
+      // Contract is fullfilled and bEthAddress can receive the offered eth + his own collateral back
+      swapContracts[_eBtcAddress].fullfilled = true;
+      swapContracts[_eBtcAddress].bEthAddress.transfer(swapContracts[_eBtcAddress].offeredEth + swapContracts[_eBtcAddress].requestedEthCollateral);
+    }
+  }
+
+  function stringToBytes32(
+    string memory source
+  ) private returns (bytes32 result) {
+    bytes memory tempEmptyStringTest = bytes(source);
+    if (tempEmptyStringTest.length == 0) {
+      return 0x0;
+    }
+
+    assembly {
+      result := mload(add(source, 32))
+    }
   }
 }

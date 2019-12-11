@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Button, Grid, InputAdornment, TextField } from "@material-ui/core";
+import { Button, Paper, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -10,7 +10,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    height: '100%',
     marginTop: '40px'
   },
   form: {
@@ -20,13 +19,19 @@ const useStyles = makeStyles({
     minWidth: '400px',
     padding: '24px'
   },
+  paper: {
+    padding: '24px'
+  },
   input: {
+    marginBottom: '32px'
+  },
+  title: {
     marginBottom: '24px'
   }
 });
 
 export default function AcceptForm(props) {
-  const [transactionHash, setTransactionHash] = useState(null);
+  const [transactionHash, setTransactionHash] = useState('');
 
   const classes = useStyles();
   const {
@@ -39,11 +44,12 @@ export default function AcceptForm(props) {
 
   return (
     <div className={classes.root} >
-      <Typography variant="h6" color="inherit">
-        Fullfill a Contract
-      </Typography>
-
       <form className={classes.form} noValidate autoComplete="off">
+        <Paper className={classes.paper}>
+          <Typography variant="h6" color="inherit" className={classes.title}>
+            Fullfill a Contract
+          </Typography>
+
           <TextField
             id="eBtcAddress"
             className={classes.input}
@@ -81,9 +87,11 @@ export default function AcceptForm(props) {
             onClick={() => handleFullfillContract({
               transactionHash
             })}
+            fullWidth
           >
             Fullfill contract
           </Button>
+        </Paper>
       </form>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import blue from "@material-ui/core/colors/blue";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
@@ -13,6 +14,9 @@ const useStyles = makeStyles({
   link: {
     textDecoration: 'none',
     color: '#fff'
+  },
+  bar: {
+    background: `${blue[900]}`
   }
 });
 
@@ -21,7 +25,7 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" className={classes.bar}>
         <Toolbar>
           <Grid item xs>
           <Link to="/" className={classes.link}>
@@ -31,8 +35,8 @@ export default function Header() {
             </Link>
           </Grid>
           <Grid item xs>
-            <Typography variant="p" color="inherit">
-              Trade Eth for Btc, trustlessly.
+            <Typography variant="body2" color="inherit">
+              Trustlessly swap ethereum and bitcoin
             </Typography>
           </Grid>
         </Toolbar>

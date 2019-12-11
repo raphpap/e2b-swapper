@@ -7,8 +7,10 @@ module.exports = async callback => {
 
     const accounts = await web3.eth.getAccounts()
 
+    const eBtcAddress = "tb1qvy2t47rgwmkj73ayp92pmfj4wtww7l23hcudu3";
+
     const tx = await mc.acceptSwapContract(
-      "mYbTcAdDrEsS",
+      eBtcAddress,
       {
         from: accounts[2],
         value: 10000000000000000,

@@ -18,7 +18,7 @@ export default function PlaceholderMessage(props) {
       <Grid container item xs={12}>
         <Grid item xs>
           <Typography variant="h6" color="inherit">
-            {eBtcAddress == "" ? (
+            {eBtcAddress === "" ? (
               "Please enter a Contract Identifier (BTC address)"
             ) : (
               "Please select an action"

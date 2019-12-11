@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Button, Grid, InputAdornment, TextField } from "@material-ui/core";
+import { Button, InputAdornment, Paper, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -9,9 +9,7 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    height: '100%',
-    marginTop: '40px'
+    alignItems: 'center'
   },
   form: {
     display: 'flex',
@@ -20,7 +18,13 @@ const useStyles = makeStyles({
     minWidth: '400px',
     padding: '24px'
   },
+  paper: {
+    padding: '24px'
+  },
   input: {
+    marginBottom: '32px'
+  },
+  title: {
     marginBottom: '24px'
   }
 });
@@ -40,11 +44,12 @@ export default function CreateForm(props) {
 
   return (
     <div className={classes.root} >
-      <Typography variant="h6" color="inherit">
-        Create a Contract
-      </Typography>
-
       <form className={classes.form} noValidate autoComplete="off">
+        <Paper className={classes.paper}>
+          <Typography variant="h6" color="inherit" className={classes.title}>
+            Create a Contract
+          </Typography>
+
           <TextField
             id="eBtcAddress"
             className={classes.input}
@@ -124,9 +129,11 @@ export default function CreateForm(props) {
               requestedBtc,
               requestedEthCollateral
             })}
+            fullWidth
           >
             Create contract
           </Button>
+        </Paper>
       </form>
     </div>
   );
