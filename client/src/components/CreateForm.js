@@ -123,13 +123,13 @@ export default function CreateForm(props) {
             color="secondary"
             className={classes.button}
             variant="contained"
-            disabled={exists}
             onClick={() => handleCreateContract({
               offeredEth,
               requestedBtc,
               requestedEthCollateral
             })}
             fullWidth
+            disabled={exists || offeredEth === 0 || requestedBtc === 0 || requestedEthCollateral === 0}
           >
             Create contract
           </Button>
