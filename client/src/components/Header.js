@@ -15,8 +15,9 @@ const useStyles = makeStyles({
     textDecoration: 'none',
     color: '#fff',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: '0 32px'
   },
   name: {
     display: 'flex',
@@ -29,6 +30,11 @@ const useStyles = makeStyles({
   },
   bar: {
     background: `${blue[900]}`
+  },
+  text: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: '0 32px'
   }
 });
 
@@ -40,13 +46,13 @@ export default function Header() {
       <AppBar position="static" className={classes.bar}>
         <Toolbar>
           <Grid item xs>
-          <Link to="/" className={classes.link}>
-            <Typography variant="h6" color="inherit" className={classes.name}>
-              Link<img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" className={classes.logo} />wap
-            </Typography>
+            <Link to="/" className={classes.link}>
+              <Typography variant="h6" color="inherit" className={classes.name}>
+                Link<img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" className={classes.logo} />wap
+              </Typography>
             </Link>
           </Grid>
-          <Grid item xs>
+          <Grid item xs className={classes.text}>
             <Typography variant="body2" color="inherit">
               Trustlessly trade ethereum for bitcoin
             </Typography>
