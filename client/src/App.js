@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route
 } from "react-router-dom";
@@ -190,9 +190,9 @@ class App extends Component {
       return (
         <ThemeProvider theme={theme}>
           <div className="App">
-            <Router>
+            <HashRouter>
               <Header />
-            </Router>
+            </HashRouter>
 
             <Typography>Loading Web3, accounts, and contract...</Typography>
           </div>
@@ -203,7 +203,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div className="App">
-          <Router>
+          <HashRouter basename={process.env.PUBLIC_URL}>
             <Header />
 
             <Switch>
@@ -264,7 +264,7 @@ class App extends Component {
                 <Home />
               </Route>
             </Switch>
-          </Router>
+          </HashRouter>
         </div>
       </ThemeProvider>
     );
