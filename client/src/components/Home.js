@@ -134,7 +134,7 @@ export default function Home() {
 
               <NavLink to="/contract/cancel" className={classes.ethItem}>
                 <Button className={classes.ethButton}>
-                  Optionnal - Cancel contract
+                  Optional - Cancel contract
                 </Button>
               </NavLink>
               <Typography variant="body2" className={classes.text}>
