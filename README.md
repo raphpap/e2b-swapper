@@ -28,7 +28,7 @@ The contract is currently deployed [here on Ropsten](https://ropsten.etherscan.i
 
 #### Anyone can read the contract information if they know the BTC address
 
-#### Bob can accept a contract by sending the right aount of ETH as a collateral
+#### Bob can accept a contract by sending the right amount of ETH as a collateral
 - Coincidently, his ETH adress is the only one who can receive Alice's ETH if Alice receives her requested BTC
 - Bob should then read the contract to validate that he "got the spot"
 - Bob now has 4 hours to proceed to the BTC payment to Alice
