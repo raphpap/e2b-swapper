@@ -1,37 +1,56 @@
-![LinkSwap](https://raw.githubusercontent.com/raphpap/link-swap/master/images/linkswap.png)
+## Inspiration
 
-## Description
-LinkSwap is the first step towards a truly trustless way to trade Ethereum with Bitcoin.
+The era of centralized exchanges is about to end. Last year, during the QuadrigaCX fiasco, 110 000 of my canadian peers were affected, some being close friends, totaling more than $100 millions in losses. Crazy thing is, this is only a drop in the bucket when talking about crypto exchanges being hacked and/or ill-intentionned and user's fund being ripped away.
+
+LinkSwap is the first step towards a truly trustless way to trade Ethereum with Bitcoin, for which I believe there is a great demand.
+
+## Demo
+
+Make sure to have [Metamask](https://metamask.io/) installed!
+
+Website: https://raphpap.github.io/link-swap/#/
 
 The contract is currently deployed [here on Ropsten](https://ropsten.etherscan.io/address/0x3f458ebe40f6fa1bc8546884dfb82b6becb2546d), and uses data from [the BTC Tesnet](https://live.blockcypher.com/btc-testnet).
 
-## How this works
+![Homescreen](https://user-images.githubusercontent.com/14226032/77242817-143f7600-6bd9-11ea-9615-8f9e492e4bc1.png)
 
-###### Alice creates a contract by entering:
+## How this works:
+
+*In this scenario, Alice is the Ethereum trader and Bob is the Bitcoin trader.*
+
+#### Alice creates a contract by entering:
 - A never used before BTC address
 - The number of offered ETH
 - The requested amount of BTC
 - A possible ETH collateral (to avoid Bob from freezing her funds without consequences)
 
-###### Anyone can read the contract information if they know the BTC address
+![Create contract](https://user-images.githubusercontent.com/14226032/77242853-7009ff00-6bd9-11ea-8d78-f6e9c766bbe9.png)
 
-###### Bob can accept a contract by sending the right aount of ETH as a collateral
+#### Anyone can read the contract information if they know the BTC address
+
+#### Bob can accept a contract by sending the right aount of ETH as a collateral
 - Coincidently, his ETH adress is the only one who can receive Alice's ETH if Alice receives her requested BTC
 - Bob should then read the contract to validate that he "got the spot"
 - Bob now has 4 hours to proceed to the BTC payment to Alice
 
-###### On the BTC chain, Bob proceeds to send AS A SINGLE TRANSACTION the EXACT AMOUNT of requested BTC to Alice
+![Accept contract](https://user-images.githubusercontent.com/14226032/77242869-aba4c900-6bd9-11ea-938c-4b53dc662c0a.png)
+
+#### On the BTC chain, Bob proceeds to send AS A SINGLE TRANSACTION the EXACT AMOUNT of requested BTC to Alice
 - Bob must take note of the transaction hash (id) and wait for at least 6 confirmations
 
-###### On the platform, Bob then fullfills the contract by inputing the transaction hash
+![BTC transaction](https://user-images.githubusercontent.com/14226032/77242892-e0b11b80-6bd9-11ea-804f-fad3988b70bd.png)
 
-###### Honeycomb's Oracle then uses Tatum's API to fetch the following information:
+#### On the platform, Bob then fullfills the contract by inputing the transaction hash
+
+![Fullfill contract](https://user-images.githubusercontent.com/14226032/77242913-1524d780-6bda-11ea-9d3f-a5cba155f5a2.png)
+
+#### Honeycomb's Oracle then uses Tatum's API to fetch the following information:
 - Nb. confirmations (must be > 6)
 - voutAddress (must be equal to Alice's BTC address)
 - voutValue (must be equal to Alice's requested BTC amount)
 - If all is good, Bob receives his collateral back along with Alice's ETH
 
-###### Alice can cancel her contract if either of the following is true:
+#### Alice can cancel her contract if either of the following is true:
 - The contract hasn't been accepted yet
   - Alice receives her balance back
 - The contract has been accepted but more than 4 hours has passed withouth fullfillment
