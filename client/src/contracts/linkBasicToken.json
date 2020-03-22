@@ -90,21 +90,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/linkBasicToken.sol",
     "exportedSymbols": {
-      "linkBasicToken": [
-        3772
-      ]
+      "linkBasicToken": [3772]
     },
     "id": 3773,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3705,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:22"
       },
@@ -151,17 +144,12 @@
             "src": "213:14:22"
           }
         ],
-        "contractDependencies": [
-          3844
-        ],
+        "contractDependencies": [3844],
         "contractKind": "contract",
         "documentation": "@title Basic token\n@dev Basic version of StandardToken, with no allowances. ",
         "fullyImplemented": true,
         "id": 3772,
-        "linearizedBaseContracts": [
-          3772,
-          3844
-        ],
+        "linearizedBaseContracts": [3772, 3844],
         "name": "linkBasicToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -961,21 +949,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/linkBasicToken.sol",
     "exportedSymbols": {
-      "linkBasicToken": [
-        3772
-      ]
+      "linkBasicToken": [3772]
     },
     "id": 3773,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3705,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:22"
       },
@@ -1022,17 +1003,12 @@
             "src": "213:14:22"
           }
         ],
-        "contractDependencies": [
-          3844
-        ],
+        "contractDependencies": [3844],
         "contractKind": "contract",
         "documentation": "@title Basic token\n@dev Basic version of StandardToken, with no allowances. ",
         "fullyImplemented": true,
         "id": 3772,
-        "linearizedBaseContracts": [
-          3772,
-          3844
-        ],
+        "linearizedBaseContracts": [3772, 3844],
         "name": "linkBasicToken",
         "nodeType": "ContractDefinition",
         "nodes": [

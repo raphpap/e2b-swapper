@@ -239,21 +239,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/ERC677Token.sol",
     "exportedSymbols": {
-      "ERC677Token": [
-        3433
-      ]
+      "ERC677Token": [3433]
     },
     "id": 3434,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3347,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:17"
       },
@@ -300,21 +293,12 @@
             "src": "119:6:17"
           }
         ],
-        "contractDependencies": [
-          3691,
-          3815,
-          3844
-        ],
+        "contractDependencies": [3691, 3815, 3844],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 3433,
-        "linearizedBaseContracts": [
-          3433,
-          3691,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3433, 3691, 3815, 3844],
         "name": "ERC677Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -506,10 +490,7 @@
                       "id": 3369,
                       "name": "Transfer",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        3690,
-                        3843
-                      ],
+                      "overloadedDeclarations": [3690, 3843],
                       "referencedDeclaration": 3690,
                       "src": "546:8:17",
                       "typeDescriptions": {
@@ -851,9 +832,7 @@
               "src": "783:113:17",
               "statements": [
                 {
-                  "assignments": [
-                    3401
-                  ],
+                  "assignments": [3401],
                   "declarations": [
                     {
                       "constant": false,
@@ -1381,21 +1360,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/ERC677Token.sol",
     "exportedSymbols": {
-      "ERC677Token": [
-        3433
-      ]
+      "ERC677Token": [3433]
     },
     "id": 3434,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3347,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:17"
       },
@@ -1442,21 +1414,12 @@
             "src": "119:6:17"
           }
         ],
-        "contractDependencies": [
-          3691,
-          3815,
-          3844
-        ],
+        "contractDependencies": [3691, 3815, 3844],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 3433,
-        "linearizedBaseContracts": [
-          3433,
-          3691,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3433, 3691, 3815, 3844],
         "name": "ERC677Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1648,10 +1611,7 @@
                       "id": 3369,
                       "name": "Transfer",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        3690,
-                        3843
-                      ],
+                      "overloadedDeclarations": [3690, 3843],
                       "referencedDeclaration": 3690,
                       "src": "546:8:17",
                       "typeDescriptions": {
@@ -1993,9 +1953,7 @@
               "src": "783:113:17",
               "statements": [
                 {
-                  "assignments": [
-                    3401
-                  ],
+                  "assignments": [3401],
                   "declarations": [
                     {
                       "constant": false,

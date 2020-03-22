@@ -78,8 +78,8 @@ Currently, 3 different calls are made to the Honeycomb Oracle to fetch all three
 `npm install -g truffle`
 
 - Install the Metamask add-on to your browser and create a wallet.
-Note down the mnemonics.
-Fund it with [Ropsten ETH](https://faucet.metamask.io/) and [Ropsten LINK](https://ropsten.chain.link/).
+  Note down the mnemonics.
+  Fund it with [Ropsten ETH](https://faucet.metamask.io/) and [Ropsten LINK](https://ropsten.chain.link/).
 
 - Create an [Infura](https://infura.io/) account, get an endpoint URL for the Ropsten testnet and note it down.
 

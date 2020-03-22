@@ -34,21 +34,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/ERC677Receiver.sol",
     "exportedSymbols": {
-      "ERC677Receiver": [
-        3703
-      ]
+      "ERC677Receiver": [3703]
     },
     "id": 3704,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3693,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".8"
-        ],
+        "literals": ["solidity", "^", "0.4", ".8"],
         "nodeType": "PragmaDirective",
         "src": "0:23:21"
       },
@@ -59,9 +52,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 3703,
-        "linearizedBaseContracts": [
-          3703
-        ],
+        "linearizedBaseContracts": [3703],
         "name": "ERC677Receiver",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -183,21 +174,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/ERC677Receiver.sol",
     "exportedSymbols": {
-      "ERC677Receiver": [
-        3703
-      ]
+      "ERC677Receiver": [3703]
     },
     "id": 3704,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3693,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".8"
-        ],
+        "literals": ["solidity", "^", "0.4", ".8"],
         "nodeType": "PragmaDirective",
         "src": "0:23:21"
       },
@@ -208,9 +192,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 3703,
-        "linearizedBaseContracts": [
-          3703
-        ],
+        "linearizedBaseContracts": [3703],
         "name": "ERC677Receiver",
         "nodeType": "ContractDefinition",
         "nodes": [

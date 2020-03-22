@@ -1,11 +1,11 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { NavLink } from "react-router-dom";
-import { Button, Paper, Grid, Typography } from "@material-ui/core";
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { NavLink } from 'react-router-dom'
+import { Button, Paper, Grid, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
-    width: '100%'
+    width: '100%',
   },
   titleContainer: {
     textAlign: 'left',
@@ -13,13 +13,13 @@ const useStyles = makeStyles({
   },
   message: {
     marginTop: '24px',
-    maxWidth: '600px'
+    maxWidth: '600px',
   },
   link: {
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   start: {
-    marginTop: '24px'
+    marginTop: '24px',
   },
   howToUseContainer: {
     textAlign: 'center',
@@ -31,63 +31,63 @@ const useStyles = makeStyles({
   ethPaper: {
     margin: '0 8px',
     overflow: 'hidden',
-    textAlign: 'left'
+    textAlign: 'left',
   },
   ethHeader: {
     background: '#33365f',
     color: '#fff',
     padding: '8px 48px',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   btcPaper: {
     margin: '0 8px',
     overflow: 'hidden',
-    textAlign: 'left'
+    textAlign: 'left',
   },
   btcHeader: {
     background: '#ff8800',
     color: '#fff',
     padding: '8px',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   ethItem: {
     display: 'block',
     textDecoration: 'none',
     margin: '24px 12px 0',
     borderBottom: `2px solid transparent`,
-    "&.active": {
-      borderBottom: `2px solid #33365f`
-    }
+    '&.active': {
+      borderBottom: `2px solid #33365f`,
+    },
   },
   btcItem: {
     display: 'block',
     textDecoration: 'none',
     margin: '24px 12px 0',
     borderBottom: `2px solid transparent`,
-    "&.active": {
-      borderBottom: `2px solid #FF8800`
-    }
+    '&.active': {
+      borderBottom: `2px solid #FF8800`,
+    },
   },
   ethButton: {
     fontSize: '15px',
     padding: '0px 4px',
     fontWeight: 500,
-    color: '#33365f'
+    color: '#33365f',
   },
   btcButton: {
     fontSize: '15px',
     padding: '0px 4px',
     fontWeight: 500,
-    color: '#FF8800'
+    color: '#FF8800',
   },
   text: {
     marginLeft: '16px',
-    marginBottom: '24px'
-  }
-});
+    marginBottom: '24px',
+  },
+})
 
 export default function Home() {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.root}>
@@ -96,9 +96,9 @@ export default function Home() {
           Welcome to LinkSwap
         </Typography>
         <Typography variant="h6" color="inherit" className={classes.message}>
-          LinkSwap is the first step towards a truly trustless way to trade Ethereum for Bitcoin in a peer-to-peer fashion.
+          LinkSwap is the first step towards a truly trustless way to trade
+          Ethereum for Bitcoin in a peer-to-peer fashion.
         </Typography>
-
 
         <NavLink to="/contract/create" className={classes.link}>
           <Button
@@ -129,7 +129,10 @@ export default function Home() {
                 </Button>
               </NavLink>
               <Typography variant="body2" className={classes.text}>
-                Creates a contract with an offer (ETH), a request (BTC) and a requested collateral (ETH). Indentify the contract using you own BTC address. Ideally, that address would be brand new and have a length of less than 32 characters.
+                Creates a contract with an offer (ETH), a request (BTC) and a
+                requested collateral (ETH). Indentify the contract using you own
+                BTC address. Ideally, that address would be brand new and have a
+                length of less than 32 characters.
               </Typography>
 
               <NavLink to="/contract/cancel" className={classes.ethItem}>
@@ -138,7 +141,10 @@ export default function Home() {
                 </Button>
               </NavLink>
               <Typography variant="body2" className={classes.text}>
-                You can cancel the contract and retrieve your funds if it hasn't been accepted yet, or if the timelapse (4 hours) has passed after acceptation. Once cancelled, the contract cannot be seen anymore and that address cannot be used once again.
+                You can cancel the contract and retrieve your funds if it hasn't
+                been accepted yet, or if the timelapse (4 hours) has passed
+                after acceptation. Once cancelled, the contract cannot be seen
+                anymore and that address cannot be used once again.
               </Typography>
             </Paper>
           </Grid>
@@ -155,7 +161,9 @@ export default function Home() {
                 </Button>
               </NavLink>
               <Typography variant="body2" className={classes.text}>
-                Use an external platform (such as a subreddit) to find someone offering to trade ETH. You can view his contract's information by inputting his requesting BTC address.
+                Use an external platform (such as a subreddit) to find someone
+                offering to trade ETH. You can view his contract's information
+                by inputting his requesting BTC address.
               </Typography>
 
               <div className={classes.btcItem}>
@@ -164,7 +172,10 @@ export default function Home() {
                 </Button>
               </div>
               <Typography variant="body2" className={classes.text}>
-                From you own BTC private wallet, send the <b>exact</b> BTC amount to the requester's BTC address <b>in a single transaction</b>. <b>Keep note of the transaction ID</b>.
+                From you own BTC private wallet, send the <b>exact</b> BTC
+                amount to the requester's BTC address{' '}
+                <b>in a single transaction</b>.{' '}
+                <b>Keep note of the transaction ID</b>.
               </Typography>
 
               <NavLink to="/contract/fullfill" className={classes.btcItem}>
@@ -173,12 +184,17 @@ export default function Home() {
                 </Button>
               </NavLink>
               <Typography variant="body2" className={classes.text}>
-                Once your BTC transaction has reached at least 6 confirmations, trigger the contract validation. The contract will validate the external BTC transaction using the Honeycomb Oracle through Tatum's Blockchain API. If the confirmation is validated, you will receive the requester's ETH as well as your collateral back.
+                Once your BTC transaction has reached at least 6 confirmations,
+                trigger the contract validation. The contract will validate the
+                external BTC transaction using the Honeycomb Oracle through
+                Tatum's Blockchain API. If the confirmation is validated, you
+                will receive the requester's ETH as well as your collateral
+                back.
               </Typography>
             </Paper>
           </Grid>
         </Grid>
       </div>
     </div>
-  );
+  )
 }

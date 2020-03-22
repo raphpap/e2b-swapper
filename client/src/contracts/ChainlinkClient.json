@@ -48,21 +48,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/ChainlinkClient.sol",
     "exportedSymbols": {
-      "ChainlinkClient": [
-        1613
-      ]
+      "ChainlinkClient": [1613]
     },
     "id": 1614,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1179,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:5"
       },
@@ -160,9 +153,7 @@
         "documentation": "@title The ChainlinkClient contract\n@notice Contract writers can inherit this contract in order to create requests for the\nChainlink network",
         "fullyImplemented": true,
         "id": 1613,
-        "linearizedBaseContracts": [
-          1613
-        ],
+        "linearizedBaseContracts": [1613],
         "name": "ChainlinkClient",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1965,10 +1956,7 @@
                       "id": 1325,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "3434:7:5",
                       "typeDescriptions": {
@@ -2208,9 +2196,7 @@
               "src": "4257:269:5",
               "statements": [
                 {
-                  "assignments": [
-                    1356
-                  ],
+                  "assignments": [1356],
                   "declarations": [
                     {
                       "constant": false,
@@ -3705,9 +3691,7 @@
                   "src": "6481:15:5"
                 },
                 {
-                  "assignments": [
-                    1473
-                  ],
+                  "assignments": [1473],
                   "declarations": [
                     {
                       "constant": false,
@@ -3859,9 +3843,7 @@
                   "src": "6502:77:5"
                 },
                 {
-                  "assignments": [
-                    1483
-                  ],
+                  "assignments": [1483],
                   "declarations": [
                     {
                       "constant": false,
@@ -4227,9 +4209,7 @@
               "src": "7007:234:5",
               "statements": [
                 {
-                  "assignments": [
-                    1506
-                  ],
+                  "assignments": [1506],
                   "declarations": [
                     {
                       "constant": false,
@@ -4381,9 +4361,7 @@
                   "src": "7013:80:5"
                 },
                 {
-                  "assignments": [
-                    1516
-                  ],
+                  "assignments": [1516],
                   "declarations": [
                     {
                       "constant": false,
@@ -5306,10 +5284,7 @@
                       "id": 1574,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "8750:7:5",
                       "typeDescriptions": {
@@ -5655,10 +5630,7 @@
                       "id": 1599,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "9112:7:5",
                       "typeDescriptions": {
@@ -5741,21 +5713,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/ChainlinkClient.sol",
     "exportedSymbols": {
-      "ChainlinkClient": [
-        1613
-      ]
+      "ChainlinkClient": [1613]
     },
     "id": 1614,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1179,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:5"
       },
@@ -5853,9 +5818,7 @@
         "documentation": "@title The ChainlinkClient contract\n@notice Contract writers can inherit this contract in order to create requests for the\nChainlink network",
         "fullyImplemented": true,
         "id": 1613,
-        "linearizedBaseContracts": [
-          1613
-        ],
+        "linearizedBaseContracts": [1613],
         "name": "ChainlinkClient",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -7658,10 +7621,7 @@
                       "id": 1325,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "3434:7:5",
                       "typeDescriptions": {
@@ -7901,9 +7861,7 @@
               "src": "4257:269:5",
               "statements": [
                 {
-                  "assignments": [
-                    1356
-                  ],
+                  "assignments": [1356],
                   "declarations": [
                     {
                       "constant": false,
@@ -9398,9 +9356,7 @@
                   "src": "6481:15:5"
                 },
                 {
-                  "assignments": [
-                    1473
-                  ],
+                  "assignments": [1473],
                   "declarations": [
                     {
                       "constant": false,
@@ -9552,9 +9508,7 @@
                   "src": "6502:77:5"
                 },
                 {
-                  "assignments": [
-                    1483
-                  ],
+                  "assignments": [1483],
                   "declarations": [
                     {
                       "constant": false,
@@ -9920,9 +9874,7 @@
               "src": "7007:234:5",
               "statements": [
                 {
-                  "assignments": [
-                    1506
-                  ],
+                  "assignments": [1506],
                   "declarations": [
                     {
                       "constant": false,
@@ -10074,9 +10026,7 @@
                   "src": "7013:80:5"
                 },
                 {
-                  "assignments": [
-                    1516
-                  ],
+                  "assignments": [1516],
                   "declarations": [
                     {
                       "constant": false,
@@ -10999,10 +10949,7 @@
                       "id": 1574,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "8750:7:5",
                       "typeDescriptions": {
@@ -11348,10 +11295,7 @@
                       "id": 1599,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4085,
                       "src": "9112:7:5",
                       "typeDescriptions": {

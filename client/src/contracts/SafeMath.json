@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/vendor/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        3345
-      ]
+      "SafeMath": [3345]
     },
     "id": 3346,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3253,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:16"
       },
@@ -36,9 +29,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that throw on error",
         "fullyImplemented": true,
         "id": 3345,
-        "linearizedBaseContracts": [
-          3345
-        ],
+        "linearizedBaseContracts": [3345],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1185,21 +1176,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/vendor/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        3345
-      ]
+      "SafeMath": [3345]
     },
     "id": 3346,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3253,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:16"
       },
@@ -1210,9 +1194,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that throw on error",
         "fullyImplemented": true,
         "id": 3345,
-        "linearizedBaseContracts": [
-          3345
-        ],
+        "linearizedBaseContracts": [3345],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [

@@ -80,21 +80,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/interfaces/ChainlinkRequestInterface.sol",
     "exportedSymbols": {
-      "ChainlinkRequestInterface": [
-        2152
-      ]
+      "ChainlinkRequestInterface": [2152]
     },
     "id": 2153,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2121,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:7"
       },
@@ -105,9 +98,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2152,
-        "linearizedBaseContracts": [
-          2152
-        ],
+        "linearizedBaseContracts": [2152],
         "name": "ChainlinkRequestInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -493,21 +484,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/interfaces/ChainlinkRequestInterface.sol",
     "exportedSymbols": {
-      "ChainlinkRequestInterface": [
-        2152
-      ]
+      "ChainlinkRequestInterface": [2152]
     },
     "id": 2153,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2121,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:7"
       },
@@ -518,9 +502,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2152,
-        "linearizedBaseContracts": [
-          2152
-        ],
+        "linearizedBaseContracts": [2152],
         "name": "ChainlinkRequestInterface",
         "nodeType": "ContractDefinition",
         "nodes": [

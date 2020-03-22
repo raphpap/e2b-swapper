@@ -90,21 +90,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/linkERC20Basic.sol",
     "exportedSymbols": {
-      "linkERC20Basic": [
-        3844
-      ]
+      "linkERC20Basic": [3844]
     },
     "id": 3845,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3817,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:24"
       },
@@ -115,9 +108,7 @@
         "documentation": "@title ERC20Basic\n@dev Simpler version of ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/179",
         "fullyImplemented": false,
         "id": 3844,
-        "linearizedBaseContracts": [
-          3844
-        ],
+        "linearizedBaseContracts": [3844],
         "name": "linkERC20Basic",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -445,21 +436,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/linkERC20Basic.sol",
     "exportedSymbols": {
-      "linkERC20Basic": [
-        3844
-      ]
+      "linkERC20Basic": [3844]
     },
     "id": 3845,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3817,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:24"
       },
@@ -470,9 +454,7 @@
         "documentation": "@title ERC20Basic\n@dev Simpler version of ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/179",
         "fullyImplemented": false,
         "id": 3844,
-        "linearizedBaseContracts": [
-          3844
-        ],
+        "linearizedBaseContracts": [3844],
         "name": "linkERC20Basic",
         "nodeType": "ContractDefinition",
         "nodes": [

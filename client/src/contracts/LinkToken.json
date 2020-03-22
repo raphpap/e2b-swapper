@@ -333,21 +333,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/LinkToken.sol",
     "exportedSymbols": {
-      "LinkToken": [
-        3569
-      ]
+      "LinkToken": [3569]
     },
     "id": 3570,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3435,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:18"
       },
@@ -412,27 +405,12 @@
             "src": "138:11:18"
           }
         ],
-        "contractDependencies": [
-          3433,
-          3691,
-          3772,
-          3815,
-          3844,
-          4066
-        ],
+        "contractDependencies": [3433, 3691, 3772, 3815, 3844, 4066],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 3569,
-        "linearizedBaseContracts": [
-          3569,
-          3433,
-          3691,
-          4066,
-          3772,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3569, 3433, 3691, 4066, 3772, 3815, 3844],
         "name": "LinkToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2014,10 +1992,7 @@
                       "id": 3552,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "2102:7:18",
                       "typeDescriptions": {
@@ -2100,21 +2075,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/LinkToken.sol",
     "exportedSymbols": {
-      "LinkToken": [
-        3569
-      ]
+      "LinkToken": [3569]
     },
     "id": 3570,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3435,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:18"
       },
@@ -2179,27 +2147,12 @@
             "src": "138:11:18"
           }
         ],
-        "contractDependencies": [
-          3433,
-          3691,
-          3772,
-          3815,
-          3844,
-          4066
-        ],
+        "contractDependencies": [3433, 3691, 3772, 3815, 3844, 4066],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 3569,
-        "linearizedBaseContracts": [
-          3569,
-          3433,
-          3691,
-          4066,
-          3772,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3569, 3433, 3691, 4066, 3772, 3815, 3844],
         "name": "LinkToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3781,10 +3734,7 @@
                       "id": 3552,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "2102:7:18",
                       "typeDescriptions": {

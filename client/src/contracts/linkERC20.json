@@ -185,21 +185,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/linkERC20.sol",
     "exportedSymbols": {
-      "linkERC20": [
-        3815
-      ]
+      "linkERC20": [3815]
     },
     "id": 3816,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3774,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:23"
       },
@@ -235,17 +228,12 @@
             "src": "171:14:23"
           }
         ],
-        "contractDependencies": [
-          3844
-        ],
+        "contractDependencies": [3844],
         "contractKind": "contract",
         "documentation": "@title ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/20",
         "fullyImplemented": false,
         "id": 3815,
-        "linearizedBaseContracts": [
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3815, 3844],
         "name": "linkERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -708,21 +696,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/linkERC20.sol",
     "exportedSymbols": {
-      "linkERC20": [
-        3815
-      ]
+      "linkERC20": [3815]
     },
     "id": 3816,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3774,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:23"
       },
@@ -758,17 +739,12 @@
             "src": "171:14:23"
           }
         ],
-        "contractDependencies": [
-          3844
-        ],
+        "contractDependencies": [3844],
         "contractKind": "contract",
         "documentation": "@title ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/20",
         "fullyImplemented": false,
         "id": 3815,
-        "linearizedBaseContracts": [
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3815, 3844],
         "name": "linkERC20",
         "nodeType": "ContractDefinition",
         "nodes": [

@@ -84,21 +84,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/vendor/Ownable.sol",
     "exportedSymbols": {
-      "Ownable": [
-        3251
-      ]
+      "Ownable": [3251]
     },
     "id": 3252,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3167,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:15"
       },
@@ -109,9 +102,7 @@
         "documentation": "@title Ownable\n@dev The Ownable contract has an owner address, and provides basic authorization control\nfunctions, this simplifies the implementation of \"user permissions\".",
         "fullyImplemented": true,
         "id": 3251,
-        "linearizedBaseContracts": [
-          3251
-        ],
+        "linearizedBaseContracts": [3251],
         "name": "Ownable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -431,10 +422,7 @@
                       "id": 3190,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "697:7:15",
                       "typeDescriptions": {
@@ -923,10 +911,7 @@
                       "id": 3232,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "1574:7:15",
                       "typeDescriptions": {
@@ -1135,21 +1120,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/vendor/Ownable.sol",
     "exportedSymbols": {
-      "Ownable": [
-        3251
-      ]
+      "Ownable": [3251]
     },
     "id": 3252,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3167,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:15"
       },
@@ -1160,9 +1138,7 @@
         "documentation": "@title Ownable\n@dev The Ownable contract has an owner address, and provides basic authorization control\nfunctions, this simplifies the implementation of \"user permissions\".",
         "fullyImplemented": true,
         "id": 3251,
-        "linearizedBaseContracts": [
-          3251
-        ],
+        "linearizedBaseContracts": [3251],
         "name": "Ownable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1482,10 +1458,7 @@
                       "id": 3190,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "697:7:15",
                       "typeDescriptions": {
@@ -1974,10 +1947,7 @@
                       "id": 3232,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "1574:7:15",
                       "typeDescriptions": {

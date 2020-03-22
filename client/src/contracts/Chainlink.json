@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/Chainlink.sol",
     "exportedSymbols": {
-      "Chainlink": [
-        1177
-      ]
+      "Chainlink": [1177]
     },
     "id": 1178,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 929,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
       },
@@ -56,9 +49,7 @@
         "documentation": "@title Library for common Chainlink functions\n@dev Uses imported CBOR library for encoding to buffer",
         "fullyImplemented": true,
         "id": 1177,
-        "linearizedBaseContracts": [
-          1177
-        ],
+        "linearizedBaseContracts": [1177],
         "name": "Chainlink",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2563,9 +2554,7 @@
                   },
                   "id": 1167,
                   "initializationExpression": {
-                    "assignments": [
-                      1146
-                    ],
+                    "assignments": [1146],
                     "declarations": [
                       {
                         "constant": false,
@@ -2850,21 +2839,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/Chainlink.sol",
     "exportedSymbols": {
-      "Chainlink": [
-        1177
-      ]
+      "Chainlink": [1177]
     },
     "id": 1178,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 929,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
       },
@@ -2895,9 +2877,7 @@
         "documentation": "@title Library for common Chainlink functions\n@dev Uses imported CBOR library for encoding to buffer",
         "fullyImplemented": true,
         "id": 1177,
-        "linearizedBaseContracts": [
-          1177
-        ],
+        "linearizedBaseContracts": [1177],
         "name": "Chainlink",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -5402,9 +5382,7 @@
                   },
                   "id": 1167,
                   "initializationExpression": {
-                    "assignments": [
-                      1146
-                    ],
+                    "assignments": [1146],
                     "declarations": [
                       {
                         "constant": false,

@@ -231,21 +231,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/linkStandardToken.sol",
     "exportedSymbols": {
-      "linkStandardToken": [
-        4066
-      ]
+      "linkStandardToken": [4066]
     },
     "id": 4067,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3846,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:25"
       },
@@ -310,21 +303,12 @@
             "src": "394:14:25"
           }
         ],
-        "contractDependencies": [
-          3772,
-          3815,
-          3844
-        ],
+        "contractDependencies": [3772, 3815, 3844],
         "contractKind": "contract",
         "documentation": "@title Standard ERC20 token\n * @dev Implementation of the basic standard token.\n@dev https://github.com/ethereum/EIPs/issues/20\n@dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol",
         "fullyImplemented": true,
         "id": 4066,
-        "linearizedBaseContracts": [
-          4066,
-          3772,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [4066, 3772, 3815, 3844],
         "name": "linkStandardToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -399,9 +383,7 @@
               "src": "829:408:25",
               "statements": [
                 {
-                  "assignments": [
-                    3869
-                  ],
+                  "assignments": [3869],
                   "declarations": [
                     {
                       "constant": false,
@@ -2332,9 +2314,7 @@
               "src": "2705:309:25",
               "statements": [
                 {
-                  "assignments": [
-                    4015
-                  ],
+                  "assignments": [4015],
                   "declarations": [
                     {
                       "constant": false,
@@ -3120,21 +3100,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/linkStandardToken.sol",
     "exportedSymbols": {
-      "linkStandardToken": [
-        4066
-      ]
+      "linkStandardToken": [4066]
     },
     "id": 4067,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3846,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:25"
       },
@@ -3199,21 +3172,12 @@
             "src": "394:14:25"
           }
         ],
-        "contractDependencies": [
-          3772,
-          3815,
-          3844
-        ],
+        "contractDependencies": [3772, 3815, 3844],
         "contractKind": "contract",
         "documentation": "@title Standard ERC20 token\n * @dev Implementation of the basic standard token.\n@dev https://github.com/ethereum/EIPs/issues/20\n@dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol",
         "fullyImplemented": true,
         "id": 4066,
-        "linearizedBaseContracts": [
-          4066,
-          3772,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [4066, 3772, 3815, 3844],
         "name": "linkStandardToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3288,9 +3252,7 @@
               "src": "829:408:25",
               "statements": [
                 {
-                  "assignments": [
-                    3869
-                  ],
+                  "assignments": [3869],
                   "declarations": [
                     {
                       "constant": false,
@@ -5221,9 +5183,7 @@
               "src": "2705:309:25",
               "statements": [
                 {
-                  "assignments": [
-                    4015
-                  ],
+                  "assignments": [4015],
                   "declarations": [
                     {
                       "constant": false,

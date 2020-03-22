@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/vendor/Buffer.sol",
     "exportedSymbols": {
-      "Buffer": [
-        2852
-      ]
+      "Buffer": [2852]
     },
     "id": 2853,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2383,
-        "literals": [
-          "solidity",
-          ">",
-          "0.4",
-          ".18"
-        ],
+        "literals": ["solidity", ">", "0.4", ".18"],
         "nodeType": "PragmaDirective",
         "src": "0:24:12"
       },
@@ -36,9 +29,7 @@
         "documentation": "@dev A library for working with mutable byte buffers in Solidity.\n* Byte buffers are mutable and expandable, and provide a variety of primitives\nfor writing to them. At any time you can fetch a bytes object containing the\ncurrent contents of the buffer. The bytes object should not be stored between\noperations, as it may change due to resizing of the buffer.",
         "fullyImplemented": true,
         "id": 2852,
-        "linearizedBaseContracts": [
-          2852
-        ],
+        "linearizedBaseContracts": [2852],
         "name": "Buffer",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -862,9 +853,7 @@
               "src": "1795:90:12",
               "statements": [
                 {
-                  "assignments": [
-                    2457
-                  ],
+                  "assignments": [2457],
                   "declarations": [
                     {
                       "constant": false,
@@ -1042,10 +1031,7 @@
                       "id": 2466,
                       "name": "append",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2604,
-                        2624
-                      ],
+                      "overloadedDeclarations": [2604, 2624],
                       "referencedDeclaration": 2624,
                       "src": "1861:6:12",
                       "typeDescriptions": {
@@ -1577,10 +1563,7 @@
                       "id": 2515,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "2767:7:12",
                       "typeDescriptions": {
@@ -2323,9 +2306,7 @@
                   "src": "3417:129:12"
                 },
                 {
-                  "assignments": [
-                    2569
-                  ],
+                  "assignments": [2569],
                   "declarations": [
                     {
                       "constant": false,
@@ -2853,10 +2834,7 @@
                       "id": 2594,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2583,
                       "src": "4202:5:12",
                       "typeDescriptions": {
@@ -3155,10 +3133,7 @@
                       "id": 2613,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2583,
                       "src": "4601:5:12",
                       "typeDescriptions": {
@@ -4214,9 +4189,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2703
-                  ],
+                  "assignments": [2703],
                   "declarations": [
                     {
                       "constant": false,
@@ -4923,10 +4896,7 @@
                       "id": 2737,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "7415:5:12",
                       "typeDescriptions": {
@@ -5252,10 +5222,7 @@
                       "id": 2756,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "7812:5:12",
                       "typeDescriptions": {
@@ -5517,10 +5484,7 @@
                       "id": 2777,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "8219:5:12",
                       "typeDescriptions": {
@@ -5930,9 +5894,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2819
-                  ],
+                  "assignments": [2819],
                   "declarations": [
                     {
                       "constant": false,
@@ -6618,21 +6580,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/vendor/Buffer.sol",
     "exportedSymbols": {
-      "Buffer": [
-        2852
-      ]
+      "Buffer": [2852]
     },
     "id": 2853,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2383,
-        "literals": [
-          "solidity",
-          ">",
-          "0.4",
-          ".18"
-        ],
+        "literals": ["solidity", ">", "0.4", ".18"],
         "nodeType": "PragmaDirective",
         "src": "0:24:12"
       },
@@ -6643,9 +6598,7 @@
         "documentation": "@dev A library for working with mutable byte buffers in Solidity.\n* Byte buffers are mutable and expandable, and provide a variety of primitives\nfor writing to them. At any time you can fetch a bytes object containing the\ncurrent contents of the buffer. The bytes object should not be stored between\noperations, as it may change due to resizing of the buffer.",
         "fullyImplemented": true,
         "id": 2852,
-        "linearizedBaseContracts": [
-          2852
-        ],
+        "linearizedBaseContracts": [2852],
         "name": "Buffer",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -7469,9 +7422,7 @@
               "src": "1795:90:12",
               "statements": [
                 {
-                  "assignments": [
-                    2457
-                  ],
+                  "assignments": [2457],
                   "declarations": [
                     {
                       "constant": false,
@@ -7649,10 +7600,7 @@
                       "id": 2466,
                       "name": "append",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2604,
-                        2624
-                      ],
+                      "overloadedDeclarations": [2604, 2624],
                       "referencedDeclaration": 2624,
                       "src": "1861:6:12",
                       "typeDescriptions": {
@@ -8184,10 +8132,7 @@
                       "id": 2515,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4084,
-                        4085
-                      ],
+                      "overloadedDeclarations": [4084, 4085],
                       "referencedDeclaration": 4084,
                       "src": "2767:7:12",
                       "typeDescriptions": {
@@ -8930,9 +8875,7 @@
                   "src": "3417:129:12"
                 },
                 {
-                  "assignments": [
-                    2569
-                  ],
+                  "assignments": [2569],
                   "declarations": [
                     {
                       "constant": false,
@@ -9460,10 +9403,7 @@
                       "id": 2594,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2583,
                       "src": "4202:5:12",
                       "typeDescriptions": {
@@ -9762,10 +9702,7 @@
                       "id": 2613,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2583,
                       "src": "4601:5:12",
                       "typeDescriptions": {
@@ -10821,9 +10758,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2703
-                  ],
+                  "assignments": [2703],
                   "declarations": [
                     {
                       "constant": false,
@@ -11530,10 +11465,7 @@
                       "id": 2737,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "7415:5:12",
                       "typeDescriptions": {
@@ -11859,10 +11791,7 @@
                       "id": 2756,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "7812:5:12",
                       "typeDescriptions": {
@@ -12124,10 +12053,7 @@
                       "id": 2777,
                       "name": "write",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2583,
-                        2726
-                      ],
+                      "overloadedDeclarations": [2583, 2726],
                       "referencedDeclaration": 2726,
                       "src": "8219:5:12",
                       "typeDescriptions": {
@@ -12537,9 +12463,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2819
-                  ],
+                  "assignments": [2819],
                   "declarations": [
                     {
                       "constant": false,

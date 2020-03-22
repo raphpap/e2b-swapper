@@ -218,21 +218,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/interfaces/ENSInterface.sol",
     "exportedSymbols": {
-      "ENSInterface": [
-        2232
-      ]
+      "ENSInterface": [2232]
     },
     "id": 2233,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2154,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:8"
       },
@@ -243,9 +236,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2232,
-        "linearizedBaseContracts": [
-          2232
-        ],
+        "linearizedBaseContracts": [2232],
         "name": "ENSInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1165,21 +1156,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/interfaces/ENSInterface.sol",
     "exportedSymbols": {
-      "ENSInterface": [
-        2232
-      ]
+      "ENSInterface": [2232]
     },
     "id": 2233,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2154,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:8"
       },
@@ -1190,9 +1174,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2232,
-        "linearizedBaseContracts": [
-          2232
-        ],
+        "linearizedBaseContracts": [2232],
         "name": "ENSInterface",
         "nodeType": "ContractDefinition",
         "nodes": [

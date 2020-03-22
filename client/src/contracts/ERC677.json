@@ -239,21 +239,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/token/ERC677.sol",
     "exportedSymbols": {
-      "ERC677": [
-        3691
-      ]
+      "ERC677": [3691]
     },
     "id": 3692,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3666,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".8"
-        ],
+        "literals": ["solidity", "^", "0.4", ".8"],
         "nodeType": "PragmaDirective",
         "src": "0:23:20"
       },
@@ -289,19 +282,12 @@
             "src": "71:9:20"
           }
         ],
-        "contractDependencies": [
-          3815,
-          3844
-        ],
+        "contractDependencies": [3815, 3844],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 3691,
-        "linearizedBaseContracts": [
-          3691,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3691, 3815, 3844],
         "name": "ERC677",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -573,21 +559,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/token/ERC677.sol",
     "exportedSymbols": {
-      "ERC677": [
-        3691
-      ]
+      "ERC677": [3691]
     },
     "id": 3692,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3666,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".8"
-        ],
+        "literals": ["solidity", "^", "0.4", ".8"],
         "nodeType": "PragmaDirective",
         "src": "0:23:20"
       },
@@ -623,19 +602,12 @@
             "src": "71:9:20"
           }
         ],
-        "contractDependencies": [
-          3815,
-          3844
-        ],
+        "contractDependencies": [3815, 3844],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 3691,
-        "linearizedBaseContracts": [
-          3691,
-          3815,
-          3844
-        ],
+        "linearizedBaseContracts": [3691, 3815, 3844],
         "name": "ERC677",
         "nodeType": "ContractDefinition",
         "nodes": [

@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "link_token/contracts/math/linkSafeMath.sol",
     "exportedSymbols": {
-      "linkSafeMath": [
-        3664
-      ]
+      "linkSafeMath": [3664]
     },
     "id": 3665,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3571,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:19"
       },
@@ -36,9 +29,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that throw on error",
         "fullyImplemented": true,
         "id": 3664,
-        "linearizedBaseContracts": [
-          3664
-        ],
+        "linearizedBaseContracts": [3664],
         "name": "linkSafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -49,9 +40,7 @@
               "src": "213:76:19",
               "statements": [
                 {
-                  "assignments": [
-                    3581
-                  ],
+                  "assignments": [3581],
                   "declarations": [
                     {
                       "constant": false,
@@ -451,9 +440,7 @@
               "src": "364:198:19",
               "statements": [
                 {
-                  "assignments": [
-                    3611
-                  ],
+                  "assignments": [3611],
                   "declarations": [
                     {
                       "constant": false,
@@ -918,9 +905,7 @@
               "src": "755:62:19",
               "statements": [
                 {
-                  "assignments": [
-                    3649
-                  ],
+                  "assignments": [3649],
                   "declarations": [
                     {
                       "constant": false,
@@ -1222,21 +1207,14 @@
   "legacyAST": {
     "absolutePath": "link_token/contracts/math/linkSafeMath.sol",
     "exportedSymbols": {
-      "linkSafeMath": [
-        3664
-      ]
+      "linkSafeMath": [3664]
     },
     "id": 3665,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3571,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".11"
-        ],
+        "literals": ["solidity", "^", "0.4", ".11"],
         "nodeType": "PragmaDirective",
         "src": "0:24:19"
       },
@@ -1247,9 +1225,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that throw on error",
         "fullyImplemented": true,
         "id": 3664,
-        "linearizedBaseContracts": [
-          3664
-        ],
+        "linearizedBaseContracts": [3664],
         "name": "linkSafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1260,9 +1236,7 @@
               "src": "213:76:19",
               "statements": [
                 {
-                  "assignments": [
-                    3581
-                  ],
+                  "assignments": [3581],
                   "declarations": [
                     {
                       "constant": false,
@@ -1662,9 +1636,7 @@
               "src": "364:198:19",
               "statements": [
                 {
-                  "assignments": [
-                    3611
-                  ],
+                  "assignments": [3611],
                   "declarations": [
                     {
                       "constant": false,
@@ -2129,9 +2101,7 @@
               "src": "755:62:19",
               "statements": [
                 {
-                  "assignments": [
-                    3649
-                  ],
+                  "assignments": [3649],
                   "declarations": [
                     {
                       "constant": false,

@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/vendor/CBOR.sol",
     "exportedSymbols": {
-      "CBOR": [
-        3155
-      ]
+      "CBOR": [3155]
     },
     "id": 3156,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2854,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
+        "literals": ["solidity", "^", "0.4", ".19"],
         "nodeType": "PragmaDirective",
         "src": "0:24:13"
       },
@@ -47,9 +40,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 3155,
-        "linearizedBaseContracts": [
-          3155
-        ],
+        "linearizedBaseContracts": [3155],
         "name": "CBOR",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -4118,21 +4109,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/vendor/CBOR.sol",
     "exportedSymbols": {
-      "CBOR": [
-        3155
-      ]
+      "CBOR": [3155]
     },
     "id": 3156,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2854,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
+        "literals": ["solidity", "^", "0.4", ".19"],
         "nodeType": "PragmaDirective",
         "src": "0:24:13"
       },
@@ -4154,9 +4138,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 3155,
-        "linearizedBaseContracts": [
-          3155
-        ],
+        "linearizedBaseContracts": [3155],
         "name": "CBOR",
         "nodeType": "ContractDefinition",
         "nodes": [

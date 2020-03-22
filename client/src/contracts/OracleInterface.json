@@ -120,21 +120,14 @@
   "ast": {
     "absolutePath": "chainlink/contracts/interfaces/OracleInterface.sol",
     "exportedSymbols": {
-      "OracleInterface": [
-        2373
-      ]
+      "OracleInterface": [2373]
     },
     "id": 2374,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2329,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
       },
@@ -145,9 +138,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2373,
-        "linearizedBaseContracts": [
-          2373
-        ],
+        "linearizedBaseContracts": [2373],
         "name": "OracleInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -677,21 +668,14 @@
   "legacyAST": {
     "absolutePath": "chainlink/contracts/interfaces/OracleInterface.sol",
     "exportedSymbols": {
-      "OracleInterface": [
-        2373
-      ]
+      "OracleInterface": [2373]
     },
     "id": 2374,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2329,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
       },
@@ -702,9 +686,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 2373,
-        "linearizedBaseContracts": [
-          2373
-        ],
+        "linearizedBaseContracts": [2373],
         "name": "OracleInterface",
         "nodeType": "ContractDefinition",
         "nodes": [

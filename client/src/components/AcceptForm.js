@@ -1,7 +1,7 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import { Button, InputAdornment, Paper, TextField } from "@material-ui/core";
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import { Button, InputAdornment, Paper, TextField } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
@@ -9,39 +9,39 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '600px',
     minWidth: '400px',
-    padding: '24px'
+    padding: '24px',
   },
   paper: {
-    padding: '24px'
+    padding: '24px',
   },
   input: {
-    marginBottom: '32px'
+    marginBottom: '32px',
   },
   title: {
-    marginBottom: '24px'
-  }
-});
+    marginBottom: '24px',
+  },
+})
 
 export default function AcceptForm(props) {
-  const classes = useStyles();
+  const classes = useStyles()
   const {
     web3,
     onChange,
     handleAcceptContract,
     exists,
     eBtcAddress,
-    requestedEthCollateral
-  } = props;
+    requestedEthCollateral,
+  } = props
 
   return (
-    <div className={classes.root} >
+    <div className={classes.root}>
       <form className={classes.form} noValidate autoComplete="off">
         <Paper className={classes.paper}>
           <Typography variant="h6" color="inherit" className={classes.title}>
@@ -57,7 +57,9 @@ export default function AcceptForm(props) {
             fullWidth
             variant="outlined"
             error={!exists}
-            helperText={!exists && "Please enter a BTC address used in a contract"}
+            helperText={
+              !exists && 'Please enter a BTC address used in a contract'
+            }
             InputLabelProps={{
               shrink: true,
             }}
@@ -66,7 +68,10 @@ export default function AcceptForm(props) {
           <TextField
             id="requestedEthCollateral"
             className={classes.input}
-            value={requestedEthCollateral && web3.utils.fromWei(requestedEthCollateral, 'ether')}
+            value={
+              requestedEthCollateral &&
+              web3.utils.fromWei(requestedEthCollateral, 'ether')
+            }
             label="How much ETH is requested as a collateral"
             fullWidth
             variant="outlined"
@@ -92,5 +97,5 @@ export default function AcceptForm(props) {
         </Paper>
       </form>
     </div>
-  );
+  )
 }
